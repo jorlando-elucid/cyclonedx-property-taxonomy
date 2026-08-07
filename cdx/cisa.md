@@ -16,7 +16,7 @@ The CISA `SBOM Author` data field maps to `metadata.authors` when one or more pe
 |----------|-------------|
 | `cdx:cisa:unknown-information` | Explicitly identifies a required data field whose information is unknown to the SBOM author. The 2026 Minimum Elements practice *Explicitly Identifying Unknown Information* requires SBOM authors to distinguish information that is unknown from information they are withholding. The value MUST be the applicable Appendix A data field name. One property instance MUST be provided for each unknown data field, including when a native field contains `unknown` or another native mechanism also describes the missing information. Use `metadata.properties` for SBOM Metadata fields and the applicable `components[].properties` for Component Data fields. |
 | `cdx:cisa:withheld-information` | Explicitly identifies a required data field whose information the SBOM author is intentionally withholding. The 2026 Minimum Elements practice *Explicitly Identifying Unknown Information* requires this information to be distinguished from information that is unknown to the author. The value MUST be the applicable Appendix A data field name. One property instance MUST be provided for each withheld data field. Use `metadata.properties` for SBOM Metadata fields and the applicable `components[].properties` for Component Data fields. |
-| `cdx:cisa:redacted-information-inquiry` | Describes the process for recipients to ask about redacted, security-related information, as specified by the 2026 Minimum Elements practice *Explicitly Identifying Unknown Information*. The value is free text and MAY contain a URL, email address, or document reference for the inquiry process. This document-level property MUST be placed in `metadata.properties` and MAY appear only once. |
+| `cdx:cisa:withheld-information-inquiry` | Describes the process for recipients to ask about withheld or redacted security-related information, as specified by the 2026 Minimum Elements practice *Explicitly Identifying Unknown Information*. The value is free text and MAY contain a URL, email address, or document reference for the inquiry process. This document-level property MUST be placed in `metadata.properties` and MAY appear only once. |
 | `cdx:cisa:alternate-name` | An alternate name for a component in addition to its native `name`. Data formats implementing Component Name are expected to allow multiple entries for alternate names. The value is one alternate name. One property instance MUST be provided for each alternate name. Component-level. |
 | `cdx:cisa:component-identifier` | A UUID or organization-specific component identifier for which no more specific native CycloneDX identifier field is appropriate. Native fields such as `purl`, `cpe`, `swid`, `omniborId`, and `swhid` SHOULD be used when applicable. The value is free text and SHOULD identify its scheme, for example `urn:uuid:3e671687-395b-41f5-a30f-a58921a69b79` or `acme-part:12345`. One property instance MUST be provided for each additional identifier. Component-level. |
 
@@ -27,7 +27,7 @@ The CISA `SBOM Author` data field maps to `metadata.authors` when one or more pe
   "metadata": {
     "properties": [
       {
-        "name": "cdx:cisa:redacted-information-inquiry",
+        "name": "cdx:cisa:withheld-information-inquiry",
         "value": "Email product-security@example.com"
       }
     ]
