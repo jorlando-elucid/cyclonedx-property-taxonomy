@@ -16,7 +16,7 @@ _Boolean value_ are `true` or `false`; case sensitive.
 | Namespace | Description | Administered By | Taxonomy |
 |-----------|-------------|-----------------|----------|
 | `cdx:ai-ml` | Namespace for properties specific to the Artificial Intelligence (AI)/machine Learning (ML) technology domain | [CycloneDX Core Working Group] | [cdx:ai-ml taxonomy](cdx/ai-ml.md) |
-| `cdx:cisa` | Namespace for properties specific to the CISA Minimum Elements for a Software Bill of Materials (SBOM) | [CycloneDX Core Working Group] | [cdx:cisa taxonomy](cdx/cisa.md) |
+| `cdx:cisa` | Namespace for properties specific to the 2026 CISA Minimum Elements for a Software Bill of Materials (SBOM) | [CycloneDX Core Working Group] | [cdx:cisa taxonomy](cdx/cisa.md) |
 | `cdx:composer` | Namespace for properties specific to the PHP Composer ecosystem. | [CycloneDX PHP Maintainers] | [cdx:composer taxonomy](cdx/composer.md) |
 | `cdx:device` | Namespace for properties specific to hardware devices. | [CycloneDX Core Working Group] | [cdx:device taxonomy](cdx/device.md) |
 | `cdx:esbuild` | Namespace for properties specific to the esbuild ecosystem. | [CycloneDX JavaScript Maintainers] | [cdx:esbuild taxonomy](cdx/esbuild.md) |
