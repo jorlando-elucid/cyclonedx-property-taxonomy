@@ -12,6 +12,35 @@ The CISA `SBOM Author` data field maps to `metadata.authors` when one or more pe
 
 ----
 
+## Guidance Mapping
+
+This mapping is informative. The property definitions below are normative for properties in this namespace.
+
+| Appendix A data field or CISA practice | CycloneDX core mapping | `cdx:cisa` property where core does not completely cover it |
+|---|---|---|
+| Component Dependency Relationship | `dependencies[]` (`ref` to `dependsOn`); completeness through `compositions` | - |
+| Component Hash Algorithm | `components[].hashes[].alg` | - |
+| Component Hash Value | `components[].hashes[].content` | When unknown, omit `hashes` and declare `Component Hash Value` through `cdx:cisa:unknown-information` |
+| Component Identifiers | `purl`, `cpe`, `swid`, `omniborId`, and `swhid` | `cdx:cisa:component-identifier` for UUIDs and organization-specific identifiers when no more specific native field is appropriate |
+| Component License | `licenses[].license.id` for SPDX identifiers; `licenses[].license.name` or other native license details when no SPDX identifier applies | - |
+| Component Name | `components[].name` | `cdx:cisa:alternate-name`, repeated once per alternate name |
+| Component Producer | `components[].manufacturer` | When unknown, set `manufacturer.name` to `unknown` and declare `Component Producer` through `cdx:cisa:unknown-information` |
+| Component Version | `components[].version` | When unknown, set `version` to `unknown` and declare `Component Version` through `cdx:cisa:unknown-information` |
+| Unknown Information | - | `cdx:cisa:unknown-information`: one instance for every required field whose value is unknown to the SBOM author; the value is the exact Appendix A data field name, even when a native field also contains `unknown` or another native mechanism describes the missing information |
+| Withheld Information | - | `cdx:cisa:withheld-information`: one instance for every required field intentionally withheld from the SBOM; the value is the exact Appendix A data field name |
+| Withheld Information Inquiry | - | `cdx:cisa:withheld-information-inquiry`: one document-level instance in `metadata.properties` with a textual description of how a recipient may ask about withheld or redacted security-related information |
+| SBOM Author | `metadata.authors[]` when people manually create the SBOM; `metadata.manufacturer` when an organization creates it through an automated process | - |
+| SBOM Author Signature | `signature`; detached signatures through `externalReferences` type `digital-signature` | - |
+| SBOM Data Format Name | `bomFormat` | - |
+| SBOM Data Format Version | `specVersion` | - |
+| SBOM Generation Context | `metadata.lifecycles[]`, using a predefined phase or custom name | - |
+| SBOM Timestamp | `metadata.timestamp` | - |
+| SBOM Tool Name | `metadata.tools.components[].name` | - |
+| SBOM Tool Version | `metadata.tools.components[].version` | - |
+| SBOM Version | `version` and `serialNumber` | - |
+
+## Properties
+
 | Property | Description |
 |----------|-------------|
 | `cdx:cisa:unknown-information` | Explicitly identifies a required data field whose information is unknown to the SBOM author. The 2026 Minimum Elements practice *Explicitly Identifying Unknown Information* requires SBOM authors to distinguish information that is unknown from information they are withholding. The value MUST be the applicable Appendix A data field name. One property instance MUST be provided for each unknown data field, including when a native field contains `unknown` or another native mechanism also describes the missing information. Use `metadata.properties` for SBOM Metadata fields and the applicable `components[].properties` for Component Data fields. |
