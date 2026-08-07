@@ -16,7 +16,7 @@ The CISA `SBOM Author` data field maps to `metadata.authors` when one or more pe
 
 This mapping is informative. The property definitions below are normative for properties in this namespace.
 
-| Appendix A data field or CISA practice | CycloneDX core mapping | `cdx:cisa` property where core does not completely cover it |
+| Appendix A data field or CISA practice | CycloneDX 1.x core mapping | `cdx:cisa` property where core does not completely cover it |
 |---|---|---|
 | Component Dependency Relationship | `dependencies[]` (`ref` to `dependsOn`); completeness through `compositions` | - |
 | Component Hash Algorithm | `components[].hashes[].alg` | - |
