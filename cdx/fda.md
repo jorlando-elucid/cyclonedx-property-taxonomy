@@ -16,7 +16,7 @@ Known vulnerabilities, vulnerability-discovery methods, vulnerability risk asses
 
 This mapping is informative. The property definitions below are normative for properties in this namespace.
 
-| FDA information or convention | CycloneDX core mapping | `cdx:fda` property where core does not completely cover it |
+| FDA information or convention | CycloneDX 1.x core mapping | `cdx:fda` property where core does not completely cover it |
 |---|---|---|
 | Level of support (§V.A.4(b)) | - | `cdx:fda:level-of-support`, free text; use the guidance examples `actively maintained`, `no longer maintained`, and `abandoned` verbatim when applicable |
 | End-of-support date (§V.A.4(b)) | `cdx:lifecycle:milestone:endOfSupport` | `cdx:fda:end-of-support-date`; when both properties occur, they should identify the same milestone, while the lifecycle property may use an ISO 8601 date or timestamp as its taxonomy permits |
