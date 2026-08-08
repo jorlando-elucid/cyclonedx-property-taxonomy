@@ -40,7 +40,7 @@ This mapping is informative. The property definitions below are normative for pr
 | `cdx:fda:source-code-custody` | Describes how custodial control of device source code is established and maintained, such as through source code escrow or backups (guidance §V.A.4 and footnote 36).<br/> The value is free text and MAY contain a controlled-document identifier or URL. |
 | `cdx:fda:risk-transfer-process` | Describes the pre-established and pre-communicated process for transferring risks when a device remains in service after end of support (guidance §VI.A).<br/> The value is free text and MAY contain a controlled-document identifier or URL. |
 | `cdx:fda:traceability` | Identifies the record providing traceability between the threat model, cybersecurity risk assessment, SBOM, and testing documentation, as recommended by guidance §V.A.<br/> The value is the corresponding traceability record identifier. |
-| `cdx:fda:support-assessed-date` | The date on which the component's level-of-support and end-of-support determinations were made.<br/> It anchors time-varying support information to the assessment used for the submission. MAY appear only once per component. |
+| `cdx:fda:support-assessed-date` | The date on which the component's level-of-support and end-of-support determinations were made.<br/> It anchors time-varying support information to the assessment used for the submission.<br/> MAY appear only once per component. |
 
 ## Example
 
